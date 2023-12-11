@@ -162,3 +162,6 @@ This section is going to be dealing with the transactional emails. Password rese
       mail__options__auth__pass: cwla-ktrm-pzou-dznn #App specific password
       mail__from: your.domain.com <noreply.you@icloud.com>
 ```
+<img width="507" alt="Screenshot 2023-12-11 at 1 28 49 PM" src="https://github.com/ravencore17/Docker-Stack-Ghost-MySQL/assets/94994507/ed84d248-855c-40d2-bc48-db0bb531827c">
+<img width="506" alt="Screenshot 2023-12-11 at 1 29 08 PM" src="https://github.com/ravencore17/Docker-Stack-Ghost-MySQL/assets/94994507/3b7ceeef-f246-4c00-8de2-1b3727b984c4">
+
