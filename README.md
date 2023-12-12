@@ -179,7 +179,7 @@ Enable the toggles: `Cache Assets`, `Block Common Exploits`, and `Web-sockets Su
 <p align="center"><img width="506" alt="New Proxy Host - SSL Window" src="https://github.com/ravencore17/Docker-Stack-Ghost-MySQL/assets/94994507/3b7ceeef-f246-4c00-8de2-1b3727b984c4"></p><br>
 
 In this section we are going to upgrade to HTTPS and get ourselves a SSL Certificate. <br>
-`SSL Certificate` - We are going to select "request a new SSL Certificate", this will get a new SSL Certificate through Let's Encrypt.
+`SSL Certificate` - We are going to select "request a new SSL Certificate", this will get a new SSL Certificate through Let's Encrypt.<br>
 `Force SSL` - Turn that on<br>
 `HTTP/2 Support` - Turn that on <br>
 `HSTS Enabled` - Turn that on <br>
