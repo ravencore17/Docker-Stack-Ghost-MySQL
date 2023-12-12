@@ -162,6 +162,30 @@ This section is going to be dealing with the transactional emails. Password rese
       mail__options__auth__pass: cwla-ktrm-pzou-dznn #App specific password
       mail__from: your.domain.com <noreply.you@icloud.com>
 ```
-<img width="507" alt="Screenshot 2023-12-11 at 1 28 49 PM" src="https://github.com/ravencore17/Docker-Stack-Ghost-MySQL/assets/94994507/ed84d248-855c-40d2-bc48-db0bb531827c">
-<img width="506" alt="Screenshot 2023-12-11 at 1 29 08 PM" src="https://github.com/ravencore17/Docker-Stack-Ghost-MySQL/assets/94994507/3b7ceeef-f246-4c00-8de2-1b3727b984c4">
+## Deployment
+This section deals with setting up ghost behind the **Nginx Proxy Manager** you should've set up as a requirement. [Findout how](https://github.com/ravencore17/Docker-Stack-Nginx-MariaDB).
 
+### Nginix Proxy Manager
+
+Once you've logged into your instance of Nginx Proxy Manager, select the `Proxy Host` button. Then select the `Add Proxy Host` button. The following window will appear. 
+<img width="507" alt="New Proxy Host - Details Window" src="https://github.com/ravencore17/Docker-Stack-Ghost-MySQL/assets/94994507/ed84d248-855c-40d2-bc48-db0bb531827c"><br>
+`Domain Names` - The domain or the subdomain you want your Ghost Blog to be directed to. <br>
+`scheme` - Leave it at HTTP, we'll upgrade it to HTTPS in a bit.<br>
+`Forward Hostname/IP` - If you are using the docker compose above then it would be `ghost-app`. The Nginx will direct all traffic directed at your `Domain Name` to the Ghost docker container named `ghost-app`.<br>
+`Foward Port` - 2368 is the default port that ghost uses to talk to the internet. But through the power of reverse proxies we will not need to expose the port but rather nginx will take care of connecting either 80 or 443 to port 2368.<br>
+Enable the toggles: `Cache Assets`, `Block Common Exploits`, and `Websockets Support`.<br>Next we are going to click on the `SSL` tab. <br><br>
+
+<img width="506" alt="New Proxy Host - SSL Window" src="https://github.com/ravencore17/Docker-Stack-Ghost-MySQL/assets/94994507/3b7ceeef-f246-4c00-8de2-1b3727b984c4"><br>
+
+In this section we are going to upgrade to HTTPS and get ourselves a SSL Certificate. <br>
+`SSL Certificate` - We are going to select "request a new SSL Certificate", this will get a new SSL Certificate through Let's Encrypt.
+`Force SSL` - Turn that on<br>
+`HTTP/2 Support` - Turn that on <br>
+`HSTS Enabled` - Turn that on <br>
+`HSTS SubDomains` - Turn that on <br>
+Press the save button and your Ghost Blog site should now be reachable at the domain you used. 
+
+## Getting to Ghost Admin Panel
+To get access to your ghost blog go to your site: https://your.domain.com/ghost.<br>
+Follow the prompts and remember to use a secure password. <br>
+**For further documentation please refer to the offical ghost documenets [here](https://ghost.org/docs/introduction/)
