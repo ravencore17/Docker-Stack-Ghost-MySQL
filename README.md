@@ -169,6 +169,7 @@ This section deals with setting up ghost behind the **Nginx Proxy Manager** you 
 
 Once you've logged into your instance of Nginx Proxy Manager, select the `Proxy Host` button. Then select the `Add Proxy Host` button. The following window will appear. 
 <p align="center"><img width="507" alt="New Proxy Host - Details Window" src="https://github.com/ravencore17/Docker-Stack-Ghost-MySQL/assets/94994507/ed84d248-855c-40d2-bc48-db0bb531827c"></p><br>
+
 `Domain Names` - The domain or the subdomain you want your Ghost Blog to be directed to. <br>
 `scheme` - Leave it at HTTP, we'll upgrade it to HTTPS in a bit.<br>
 `Forward Hostname/IP` - If you are using the docker compose above then it would be `ghost-app`. The Nginx will direct all traffic directed at your `Domain Name` to the Ghost docker container named `ghost-app`.<br>
